@@ -7,4 +7,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="repeat_email">Confirme seu email</string>
+    <string name="confirm_senha">Confirme sua senha</string>
+    <string name="register">Registrar</string>
+    <string name="esqueceu">Esqueceu sua senha?</string>
+    <string name="enviar">Enviar</string>
+    <string name="digite">Digite o código enviado por email</string>
+    <string name="confirmar">Confirmar</string>
 </resources>
