@@ -1,5 +1,6 @@
 package br.com.smartirrigation.smartirrigation.activity;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -54,6 +55,12 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
         switch (item.getItemId()){
             case R.id.nav_home:
                 fragment = new HomeFragment();
+                break;
+            case R.id.nav_logout:
+                Intent intent = new Intent(HomeActivity.this,
+                        LoginActivity.class);
+                startActivity(intent);
+                finish();
                 break;
         }
         drawerLayout.closeDrawers();

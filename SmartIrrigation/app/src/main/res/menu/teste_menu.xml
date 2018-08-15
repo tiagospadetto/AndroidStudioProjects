@@ -5,7 +5,18 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_white_2_24dp"
-            android:title="Inicio" />
+            android:title="DashBoard" />
+
+        <item
+            android:id="@+id/nav_config"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Configuração" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_exit_to_app_white_24dp"
+            android:title="Sair" />
     </group>
 
 </menu>
