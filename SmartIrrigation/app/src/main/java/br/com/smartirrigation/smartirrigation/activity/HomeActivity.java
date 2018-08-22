@@ -16,7 +16,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import br.com.smartirrigation.smartirrigation.R;
+import br.com.smartirrigation.smartirrigation.fragments.ConfigFragment;
+import br.com.smartirrigation.smartirrigation.fragments.HistFragment;
 import br.com.smartirrigation.smartirrigation.fragments.HomeFragment;
+import br.com.smartirrigation.smartirrigation.fragments.PerfFragment;
+import br.com.smartirrigation.smartirrigation.fragments.ProcssFragment;
 
 import static br.com.smartirrigation.smartirrigation.R.layout.menu_header;
 
@@ -55,6 +59,18 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
         switch (item.getItemId()){
             case R.id.nav_home:
                 fragment = new HomeFragment();
+                break;
+            case R.id.nav_config:
+                fragment = new ConfigFragment();
+                break;
+            case R.id.nav_procss:
+                fragment = new ProcssFragment();
+                break;
+            case R.id.nav_perf:
+                fragment = new PerfFragment();
+                break;
+            case R.id.nav_hist:
+                fragment = new HistFragment();
                 break;
             case R.id.nav_logout:
                 Intent intent = new Intent(HomeActivity.this,
