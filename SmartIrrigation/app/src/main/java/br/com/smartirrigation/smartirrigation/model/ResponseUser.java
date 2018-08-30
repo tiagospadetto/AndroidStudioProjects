@@ -5,20 +5,34 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 
 public class ResponseUser implements Serializable {
-    @JsonProperty("boolean")
-    private boolean teste;
 
-    public ResponseUser(boolean teste) {
-        this.teste = teste;
+   @JsonProperty("Status")
+   private String status;
+    @JsonProperty("Mensagem")
+    private String mensagem;
+
+    public ResponseUser() {
+
     }
 
-    public boolean isTeste() {
-        return teste;
+    public ResponseUser(String status, String mensagem) {
+        this.status = status;
+        this.mensagem = mensagem;
     }
 
-    public void setTeste(boolean teste) {
-        this.teste = teste;
+    public String getStatus() {
+        return status;
     }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
+    public String getMensagem() {
+        return mensagem;
+    }
+
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
+    }
 }

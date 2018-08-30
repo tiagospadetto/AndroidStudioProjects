@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import br.com.smartirrigation.smartirrigation.R;
 import br.com.smartirrigation.smartirrigation.model.ResponseUser;
+import br.com.smartirrigation.smartirrigation.model.SaveSharedPreference;
 import br.com.smartirrigation.smartirrigation.task.LoginTask;
 
 public class LoginActivity extends AppCompatActivity implements LoginTask.LoginCallBack {
@@ -31,6 +34,16 @@ public class LoginActivity extends AppCompatActivity implements LoginTask.LoginC
         esqsenha_TextView =  findViewById(R.id.esqsenha_TextView);
         email = findViewById(R.id.email_inputText);
         senha = findViewById(R.id.password_inputText);
+
+
+        if(SaveSharedPreference.getUserName(LoginActivity.this).equals("USER1"))
+        {
+            Intent intent = new Intent(LoginActivity.this,
+                    HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
 
         login_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,17 +85,24 @@ public class LoginActivity extends AppCompatActivity implements LoginTask.LoginC
     @Override
     public void LoginSuccess(ResponseUser login) {
 
-        if(login.isTeste()){
+        if(login.getStatus().equals("sucesso")){
+
+            SaveSharedPreference.setUserName(LoginActivity.this,"USER1");
             Intent intent = new Intent(LoginActivity.this,
                     HomeActivity.class);
             startActivity(intent);
             finish();
+        }else{
+
+            Toast.makeText(getApplicationContext(), login.getMensagem(), Toast.LENGTH_SHORT).show();
         }
 
     }
 
     @Override
     public void LoginFailure(String message) {
+
+        Toast.makeText(getApplicationContext(), "Erro ao efetuar Login.", Toast.LENGTH_SHORT).show();
 
     }
 }

@@ -21,6 +21,8 @@ import br.com.smartirrigation.smartirrigation.fragments.HistFragment;
 import br.com.smartirrigation.smartirrigation.fragments.HomeFragment;
 import br.com.smartirrigation.smartirrigation.fragments.PerfFragment;
 import br.com.smartirrigation.smartirrigation.fragments.ProcssFragment;
+import br.com.smartirrigation.smartirrigation.model.SaveSharedPreference;
+
 
 import static br.com.smartirrigation.smartirrigation.R.layout.menu_header;
 
@@ -73,10 +75,12 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
                 fragment = new HistFragment();
                 break;
             case R.id.nav_logout:
+                SaveSharedPreference.setUserName(HomeActivity.this,"");
                 Intent intent = new Intent(HomeActivity.this,
                         LoginActivity.class);
                 startActivity(intent);
                 finish();
+
                 break;
         }
         drawerLayout.closeDrawers();

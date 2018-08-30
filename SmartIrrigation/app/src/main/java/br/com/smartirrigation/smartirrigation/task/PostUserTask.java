@@ -44,13 +44,13 @@ public class PostUserTask extends AsyncTask< String, Void, Response<ResponseUser
         if(response == null || !response.isSuccessful()){
             delegate.PostUserFailure("Erro ao incluir usuario.");
         } else {
-            delegate.PostUserSuccess(response.isSuccessful());
+            delegate.PostUserSuccess(response.body());
         }
 
     }
     public interface PosUserCallBack{
 
-        public void PostUserSuccess(Boolean teste);
+        public void PostUserSuccess(ResponseUser adduser);
         public void PostUserFailure(String message);
 
     }
