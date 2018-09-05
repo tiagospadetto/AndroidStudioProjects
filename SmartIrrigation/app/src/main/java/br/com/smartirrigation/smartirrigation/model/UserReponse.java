@@ -4,53 +4,56 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
-    @JsonProperty("Id")
-    private String  Id ;
-    @JsonProperty("Email")
-    private String  Email;
-    @JsonProperty("Senha")
-    private String  Senha;
-    @JsonProperty("Nome")
-    private String  Nome;
+public class UserReponse  implements Serializable {
 
-    public User(String id, String email, String senha, String nome) {
-        Id = id;
-        Email = email;
-        Senha = senha;
-        Nome = nome;
+    @JsonProperty("Id")
+    private String  id ;
+    @JsonProperty("Email")
+    private String  email;
+    @JsonProperty("Senha")
+    private String  senha;
+    @JsonProperty("Nome")
+    private String  nome;
+
+    public UserReponse() {
+    }
+
+    public UserReponse(String id, String email, String senha, String nome) {
+        this.id = id;
+        this.email = email;
+        this.senha = senha;
+        this.nome = nome;
     }
 
     public String getId() {
-        return Id;
+        return id;
     }
 
     public void setId(String id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getSenha() {
-        return Senha;
+        return senha;
     }
 
     public void setSenha(String senha) {
-        Senha = senha;
+        this.senha = senha;
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String nome) {
-        Nome = nome;
+        this.nome = nome;
     }
-
 }

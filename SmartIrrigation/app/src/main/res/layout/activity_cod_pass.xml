@@ -9,7 +9,7 @@
     tools:context=".activity.LoginActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/pass_toolbar"
+        android:id="@+id/pass_cod_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -33,7 +33,7 @@
         tools:layout_editor_absoluteY="56dp" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/title2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
@@ -57,19 +57,19 @@
         android:textColorHint="@color/colorPrimary">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/email_pass"
+            android:id="@+id/cod_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="16dp"
-            android:hint="@string/digite_email"
+            android:hint="@string/digite"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/enviar_email_button"
+        android:id="@+id/confirma_pass_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

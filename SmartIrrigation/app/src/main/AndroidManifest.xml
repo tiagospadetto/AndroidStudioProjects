@@ -23,7 +23,8 @@
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.EsqPassActivity" />
-        <activity android:name=".activity.ChangePassActivity"></activity>
+        <activity android:name=".activity.ChangePassActivity" />
+        <activity android:name=".activity.CodPassActivity"/>
     </application>
 
 </manifest>

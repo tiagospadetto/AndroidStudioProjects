@@ -23,7 +23,7 @@ public class EsqPassActivity extends AppCompatActivity implements PassTask.PassC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_esq_pass);
 
-        enviar_button = findViewById(R.id.enviar_button);
+        enviar_button = findViewById(R.id.enviar_email_button);
         email = findViewById(R.id.email_pass);
 
 
@@ -56,15 +56,18 @@ public class EsqPassActivity extends AppCompatActivity implements PassTask.PassC
 
     @Override
     public void PassSuccess(ResponseUser user) {
+
         Toast.makeText(getApplicationContext(), user.getMensagem(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(EsqPassActivity.this,
-                ChangePassActivity.class);
+                CodPassActivity.class);
         startActivity(intent);
 
     }
 
     @Override
     public void PassFailure(String message) {
+
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
 
     }
 }
