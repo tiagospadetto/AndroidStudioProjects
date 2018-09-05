@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -31,7 +32,22 @@ public class RegisterActivity extends AppCompatActivity implements PostUserTask.
         senha = findViewById(R.id.senha_edit);
         email2 = findViewById(R.id.email2_edit);
         senha2 = findViewById(R.id.senha2_edit);
-        enviar = findViewById(R.id.enviar_button);
+        enviar = findViewById(R.id.registrar_button);
+
+        Toolbar album_toolbar=  findViewById(R.id.album_toolbar);
+        album_toolbar.setTitle("Registrar");
+        setSupportActionBar(album_toolbar);
+
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+        album_toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
         enviar.setOnClickListener(new View.OnClickListener() {

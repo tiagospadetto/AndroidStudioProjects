@@ -7,18 +7,19 @@ import android.os.AsyncTask;
 import java.io.IOException;
 
 import br.com.smartirrigation.smartirrigation.model.ResponseUser;
-import br.com.smartirrigation.smartirrigation.services.UserPost;
+import br.com.smartirrigation.smartirrigation.services.GetPass;
 import br.com.smartirrigation.smartirrigation.util.RetrofitUtil;
 import retrofit2.Call;
 import retrofit2.Response;
 
-public class LoginTask extends AsyncTask< String, Void, Response<ResponseUser>> {
+public class PassTask  extends AsyncTask< String, Void, Response<ResponseUser>> {
 
-    private LoginCallBack delegate;
+
+    private PassCallBack delegate;
     private Context context;
     private ProgressDialog load ;
 
-    public LoginTask(LoginCallBack delegate ,Context  context) {
+    public PassTask(PassCallBack delegate, Context context) {
         this.delegate = delegate;
         this.context = context;
     }
@@ -27,10 +28,9 @@ public class LoginTask extends AsyncTask< String, Void, Response<ResponseUser>> 
     @Override
     protected Response<ResponseUser> doInBackground(String... params) {
 
+        GetPass service = RetrofitUtil.getInstance().create(GetPass.class);
 
-        UserPost service = RetrofitUtil.getInstance().create(UserPost.class);
-
-        Call<ResponseUser> call = service.loginUser(params[0],params[1]);
+        Call<ResponseUser> call = service.getpassr(params[0]);
 
         try {
             return call.execute();
@@ -38,32 +38,29 @@ public class LoginTask extends AsyncTask< String, Void, Response<ResponseUser>> 
 
             e.printStackTrace();
         }
-
-
-
         return null;
     }
 
     @Override
     protected void onPreExecute() {
         load = ProgressDialog.show(context, "Por favor Aguarde ...",
-                "Realizando login ...");
+                "Enviando Link ...");
     }
 
     @Override
     protected void onPostExecute(Response<ResponseUser> response) {
 
         if (response == null || !response.isSuccessful()) {
-            delegate.LoginFailure("Erro ao incluir usuario.");
+            delegate.PassFailure("Erro ao recuperar senha usuario.");
         } else {
-            delegate.LoginSuccess(response.body());
+            delegate.PassSuccess(response.body());
         }
         load.dismiss();
     }
-    public interface LoginCallBack{
+    public interface PassCallBack{
 
-        public void LoginSuccess(ResponseUser teste);
-        public void LoginFailure(String message);
+        public void PassSuccess(ResponseUser teste);
+        public void PassFailure(String message);
 
     }
 }

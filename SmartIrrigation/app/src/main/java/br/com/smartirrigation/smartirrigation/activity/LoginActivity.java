@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity implements LoginTask.LoginC
             @Override
             public void onClick(View v) {
 
-                LoginTask task = new LoginTask(LoginActivity.this);
+                LoginTask task = new LoginTask(LoginActivity.this,LoginActivity.this);
 
                 task.execute(email.getText().toString(),senha.getText().toString());
 
@@ -86,8 +86,8 @@ public class LoginActivity extends AppCompatActivity implements LoginTask.LoginC
     public void LoginSuccess(ResponseUser login) {
 
         if(login.getStatus().equals("sucesso")){
-
-            SaveSharedPreference.setUserName(LoginActivity.this,"USER1");
+            Toast.makeText(getApplicationContext(), login.getMensagem(), Toast.LENGTH_SHORT).show();
+            SaveSharedPreference.setUserName(LoginActivity.this,login.getMensagem());
             Intent intent = new Intent(LoginActivity.this,
                     HomeActivity.class);
             startActivity(intent);
