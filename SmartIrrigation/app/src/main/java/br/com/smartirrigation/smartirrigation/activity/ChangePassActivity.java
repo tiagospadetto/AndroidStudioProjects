@@ -1,8 +1,10 @@
 package br.com.smartirrigation.smartirrigation.activity;
 
+import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -59,6 +61,12 @@ public class ChangePassActivity extends AppCompatActivity implements AlterarSenh
 
     @Override
     public void AlterarSenhaSuccess(ResponseUser user) {
+
+        Toast.makeText(getApplicationContext(),user.getMensagem(), Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(ChangePassActivity.this,
+                LoginActivity.class);
+        startActivity(intent);
 
     }
 

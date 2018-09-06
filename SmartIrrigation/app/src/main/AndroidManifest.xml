@@ -24,7 +24,8 @@
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.EsqPassActivity" />
         <activity android:name=".activity.ChangePassActivity" />
-        <activity android:name=".activity.CodPassActivity"/>
+        <activity android:name=".activity.CodPassActivity" />
+        <activity android:name=".activity.EditNameActivity"></activity>
     </application>
 
 </manifest>

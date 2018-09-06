@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity implements LoginTask.LoginC
         senha = findViewById(R.id.password_inputText);
 
 
-        if(SaveSharedPreference.getUserName(LoginActivity.this).equals("USER1"))
+        if(!SaveSharedPreference.getUserName(LoginActivity.this).equals(""))
         {
             Intent intent = new Intent(LoginActivity.this,
                     HomeActivity.class);
@@ -85,10 +85,10 @@ public class LoginActivity extends AppCompatActivity implements LoginTask.LoginC
     public void LoginSuccess(ResponseUser login) {
 
         if(login.getStatus().equals("sucesso")){
-            Toast.makeText(getApplicationContext(), login.getMensagem(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), login.getMensagem(), Toast.LENGTH_SHORT).show();
             SaveSharedPreference.setUserName(LoginActivity.this,login.getMensagem());
-            Intent intent = new Intent(LoginActivity.this,
-                    HomeActivity.class);
+            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+            //intent.putExtra("Id", login.getMensagem());
             startActivity(intent);
             finish();
         }else{

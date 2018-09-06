@@ -36,4 +36,11 @@ public interface UserPost {
 
     @POST("api/Usuario/ValidarUsuario")
     public Call<UserReponse> validUser(@Query("Codigo") String Codigo);
+
+    @FormUrlEncoded
+    @POST("api/Usuario/AlterarPerfil")
+    public Call<ResponseUser> atualizarperfil(@Field("Id") String Id, @Field("Nome") String Nome, @Field("Email") String Email);
+
+
+
 }
