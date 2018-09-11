@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 
 import java.io.IOException;
 
+import br.com.smartirrigation.smartirrigation.fragments.PerfFragment;
 import br.com.smartirrigation.smartirrigation.model.ResponseUser;
 import br.com.smartirrigation.smartirrigation.services.UserPost;
 import br.com.smartirrigation.smartirrigation.util.RetrofitUtil;
@@ -47,7 +48,8 @@ public class AtualizarPerfilTask extends AsyncTask< String, Void, Response<Respo
         } else {
             delegate.AtualizarPerfilSuccess(response.body());
         }
-        // load.dismiss();
+
+
     }
     public interface AtualizarPerfilCallBack{
 

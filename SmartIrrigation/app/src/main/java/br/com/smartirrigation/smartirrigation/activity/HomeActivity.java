@@ -50,10 +50,16 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
         navigationView = findViewById(R.id.main_navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Bundle dados = getIntent().getExtras();
+        if(dados != null){
+            if(dados.get("fragment").equals("PerfFragment")){
 
+                mudaFragmetContainer(new PerfFragment());
+            }
+        } else{
 
-        mudaFragmetContainer(new HomeFragment());
-
+            mudaFragmetContainer(new HomeFragment());
+        }
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

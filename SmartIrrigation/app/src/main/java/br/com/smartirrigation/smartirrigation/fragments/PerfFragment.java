@@ -11,8 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.com.smartirrigation.smartirrigation.R;
+import br.com.smartirrigation.smartirrigation.activity.EditEmailActivity;
 import br.com.smartirrigation.smartirrigation.activity.EditNameActivity;
 import br.com.smartirrigation.smartirrigation.activity.HomeActivity;
+import br.com.smartirrigation.smartirrigation.interfaces.TratReturn;
+import br.com.smartirrigation.smartirrigation.model.ResponseUser;
 import br.com.smartirrigation.smartirrigation.model.SaveSharedPreference;
 import br.com.smartirrigation.smartirrigation.model.User;
 import br.com.smartirrigation.smartirrigation.model.UserReponse;
@@ -21,7 +24,7 @@ import br.com.smartirrigation.smartirrigation.task.GetUserTask;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBack {
+public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBack,TratReturn {
 
     private TextView nome_user ;
     private TextView email_user ;
@@ -44,9 +47,7 @@ public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBac
         edit_user = view.findViewById(R.id.edit_user);
         edit_email = view.findViewById(R.id.edit_email);
 
-        GetUserTask task = new GetUserTask(PerfFragment.this);
-
-        task.execute(SaveSharedPreference.getUserName(getActivity())) ;
+        atualizaFragmentComResposta();
 
         edit_user.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +55,25 @@ public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBac
 
                 Intent intent = new Intent(getActivity(),
                         EditNameActivity.class);
+
+                intent.putExtra("email", email_user.getText().toString());
                 startActivity(intent);
+
+                getActivity().finish();
+            }
+        });
+
+        edit_email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getActivity(),
+                        EditEmailActivity.class);
+
+                intent.putExtra("nome", nome_user.getText().toString());
+                startActivity(intent);
+
+                getActivity().finish();
             }
         });
 
@@ -76,5 +95,13 @@ public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBac
     @Override
     public void GetUserFailure(String message) {
 
+    }
+
+    @Override
+    public void atualizaFragmentComResposta() {
+
+        GetUserTask task = new GetUserTask(PerfFragment.this);
+
+        task.execute(SaveSharedPreference.getUserName(getActivity())) ;
     }
 }
