@@ -15,13 +15,14 @@
 
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginBottom="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
             android:src="@drawable/logo11"
             app:layout_constraintBottom_toTopOf="@+id/textView18"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +39,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:text="Smart Irrigation"
+            android:text="@string/app_name"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -50,13 +51,14 @@
             android:id="@+id/linearLayout"
             android:layout_width="344dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="150dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/gradiente"
             android:orientation="vertical"
+            android:padding="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,8 +89,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_edit_white_24dp"
-                    android:background="@drawable/button_edit"/>
+                    android:background="@drawable/button_edit"
+                    android:src="@drawable/ic_edit_white_24dp" />
 
             </LinearLayout>
 
@@ -122,9 +124,89 @@
 
             </LinearLayout>
 
-            <android.support.v7.widget.CardView
+            <View
+                android:id="@+id/divider"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="2dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/equipamento_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    app:cardBackgroundColor="@android:color/holo_green_light">
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:gravity="center_horizontal"
+                            android:text="Equipamentos"
+                            android:textColor="@android:color/white" />
+
+                        <TextView
+                            android:id="@+id/equipamento_quant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="center_horizontal"
+                            android:text="1"
+                            android:textColor="@android:color/white" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    app:cardBackgroundColor="@android:color/holo_blue_dark">
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:gravity="center_horizontal"
+                            android:text="Canteiros"
+                            android:textColor="@android:color/white" />
+
+                        <TextView
+                            android:id="@+id/equipamento_quant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="center_horizontal"
+                            android:text="1"
+                            android:textColor="@android:color/white" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
         </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>

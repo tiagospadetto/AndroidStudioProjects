@@ -6,4 +6,6 @@
     <color name="primary_material_dark">#004d40</color>
     <color name="primary_dark_material_dark">#00251a</color>
     <color name="accent_material_light">#39796b</color>
+    <color name="card_equip">#ff99cc00</color>
+    android:color/
 </resources>

@@ -28,7 +28,7 @@ public class EditEmailActivity extends AppCompatActivity implements AtualizarPer
         salvaremail_edit_button = findViewById(R.id.salvaremail_edit_button);
 
         Toolbar edit_email_toolbar =  findViewById(R.id.edit_email_toolbar);
-        edit_email_toolbar.setTitle("Digite o nova Senha");
+        edit_email_toolbar.setTitle("Digite o novo Email");
         setSupportActionBar(edit_email_toolbar);
 
         if (getSupportActionBar() != null){
@@ -52,6 +52,8 @@ public class EditEmailActivity extends AppCompatActivity implements AtualizarPer
         });
 
         dados = getIntent().getExtras();
+
+        email_editemail_edit.setText(dados.get("email").toString());
 
         salvaremail_edit_button.setOnClickListener(new View.OnClickListener() {
             @Override

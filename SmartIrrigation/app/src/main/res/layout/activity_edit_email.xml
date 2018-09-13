@@ -63,8 +63,8 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="16dp"
-            android:hint="@string/digite_senha"
-            android:inputType="textPassword"
+            android:hint="@string/digite_email"
+            android:inputType="textEmailAddress"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
