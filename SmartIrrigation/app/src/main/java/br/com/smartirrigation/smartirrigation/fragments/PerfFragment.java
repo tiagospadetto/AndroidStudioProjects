@@ -34,8 +34,8 @@ public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBac
     private TextView nome_user ;
     private TextView email_user ;
     private TextView equipamento_quant;
-    private ImageView edit_user;
-    private ImageView edit_email;
+    private TextView edit_user;
+    private TextView edit_email;
     private CardView equipamento_card_view;
 
 
