@@ -55,12 +55,12 @@ public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBac
         email_user = view.findViewById(R.id.email_user);
         edit_user = view.findViewById(R.id.edit_user);
         edit_email = view.findViewById(R.id.edit_email);
-        equipamento_quant = view.findViewById(R.id.equipamento_quant);
-        equipamento_card_view = view.findViewById(R.id.equipamento_card_view);
+       // equipamento_quant = view.findViewById(R.id.equipamento_quant);
+        //equipamento_card_view = view.findViewById(R.id.equipamento_card_view);
 
         atualizaFragmentComResposta();
 
-
+        /*
         equipamento_card_view.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
             @Override
@@ -76,8 +76,9 @@ public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBac
 
 
             }
-        });
 
+        });
+*/
 
         edit_user.setOnClickListener(new View.OnClickListener() {
             @Override

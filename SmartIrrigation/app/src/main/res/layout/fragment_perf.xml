@@ -18,14 +18,44 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/logo12" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                android:text="Dado:"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/common_google_signin_btn_text_dark_default" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/elev"
                 android:layout_width="350dp"
-                android:layout_height="150dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
                 app:cardBackgroundColor="@color/common_google_signin_btn_text_dark_default"
                 app:cardElevation="8dp">
 
@@ -36,8 +66,8 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/common_google_signin_btn_text_dark_disabled"
+                        android:layout_height="35dp"
+                        android:background="@color/colorPrimary"
                         android:orientation="horizontal">
 
                         <TextView
@@ -48,7 +78,7 @@
                             android:layout_marginTop="8dp"
                             android:layout_weight="1"
                             android:text="Nome"
-                            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                            android:textColor="@color/common_google_signin_btn_text_light_default"
                             android:textSize="18sp" />
 
                         <TextView
@@ -60,7 +90,7 @@
                             android:layout_weight="1"
                             android:gravity="right"
                             android:text="Alterar"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/common_google_signin_btn_text_dark_default"
                             android:textSize="18sp" />
                     </LinearLayout>
 
@@ -68,7 +98,9 @@
                         android:id="@+id/nome_user"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginTop="8dp"
                         android:text="Carregando..."
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="18sp" />
@@ -79,9 +111,9 @@
             <android.support.v7.widget.CardView
                 android:id="@+id/elev"
                 android:layout_width="350dp"
-                android:layout_height="150dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="16dp"
+                android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="@color/common_google_signin_btn_text_dark_default"
                 app:cardElevation="8dp">
 
@@ -92,8 +124,8 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/common_google_signin_btn_text_dark_disabled"
+                        android:layout_height="35dp"
+                        android:background="@color/colorPrimary"
                         android:orientation="horizontal">
 
                         <TextView
@@ -104,7 +136,7 @@
                             android:layout_marginTop="8dp"
                             android:layout_weight="1"
                             android:text="Email"
-                            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                            android:textColor="@color/common_google_signin_btn_text_light_default"
                             android:textSize="18sp" />
 
                         <TextView
@@ -116,7 +148,7 @@
                             android:layout_weight="1"
                             android:gravity="right"
                             android:text="Alterar"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/common_google_signin_btn_text_dark_default"
                             android:textSize="18sp" />
                     </LinearLayout>
 
@@ -124,7 +156,9 @@
                         android:id="@+id/email_user"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginTop="8dp"
                         android:text="Carregando..."
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="18sp" />
@@ -132,171 +166,14 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/elev"
-                android:layout_width="350dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="16dp"
-                app:cardBackgroundColor="@color/common_google_signin_btn_text_dark_default"
-                app:cardElevation="8dp">
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/common_google_signin_btn_text_dark_default" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/common_google_signin_btn_text_dark_disabled"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="32dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_weight="1"
-                            android:text="Equipamentos"
-                            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <android.support.v7.widget.CardView
-                                android:id="@+id/equipamento_card_view"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginLeft="32dp"
-                                android:layout_marginTop="8dp"
-                                app:cardBackgroundColor="@color/colorPrimaryDark"
-                                app:cardElevation="-8dp">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical|center_horizontal"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:id="@+id/equipamento_quant"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center_horizontal"
-                                        android:text="1"
-                                        android:textColor="@color/common_google_signin_btn_text_dark_default"
-                                        android:textSize="30sp" />
-                                </LinearLayout>
-                            </android.support.v7.widget.CardView>
-
-
-                            <LinearLayout
-                                android:layout_width="180dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginLeft="32dp"
-                                android:orientation="vertical">
-
-                                <Button
-                                    android:id="@+id/button6"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="32dp"
-                                    android:layout_marginRight="32dp"
-                                    android:layout_marginTop="8dp"
-                                    android:background="@drawable/buttonstyle"
-                                    android:shadowColor="@color/colorPrimary"
-                                    android:text="Adicionar"
-                                    android:textColor="@color/common_google_signin_btn_text_dark_default" />
-
-                                <Button
-                                    android:id="@+id/button5"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="8dp"
-                                    android:layout_marginLeft="32dp"
-                                    android:layout_marginRight="32dp"
-                                    android:layout_marginTop="8dp"
-                                    android:background="@drawable/buttonstyle"
-                                    android:text="Editar"
-                                    android:textColor="@color/common_google_signin_btn_text_dark_default" />
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/elev"
-                android:layout_width="350dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="16dp"
-                app:cardBackgroundColor="@color/common_google_signin_btn_text_dark_default"
-                app:cardElevation="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/common_google_signin_btn_text_dark_disabled"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="32dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_weight="1"
-                            android:text="Email"
-                            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="32dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:text="Alterar"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/textView16"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="32dp"
-                        android:text="Carregando..."
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
