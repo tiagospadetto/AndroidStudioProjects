@@ -1,12 +1,14 @@
 package br.com.smartirrigation.smartirrigation.activity;
 
 import android.content.Intent;
+import android.support.design.button.MaterialButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.smartirrigation.smartirrigation.R;
@@ -16,7 +18,7 @@ import br.com.smartirrigation.smartirrigation.task.PassTask;
 public class EsqPassActivity extends AppCompatActivity implements PassTask.PassCallBack{
 
     private Button enviar_button ;
-    private TextInputEditText email ;
+    private EditText email ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,7 @@ public class EsqPassActivity extends AppCompatActivity implements PassTask.PassC
 
 
         Toolbar pass_toolbar =  findViewById(R.id.pass_toolbar);
-        pass_toolbar.setTitle("Esqueci Minha Senha");
+        pass_toolbar.setTitle("Voltar");
         setSupportActionBar(pass_toolbar);
 
         if (getSupportActionBar() != null){
