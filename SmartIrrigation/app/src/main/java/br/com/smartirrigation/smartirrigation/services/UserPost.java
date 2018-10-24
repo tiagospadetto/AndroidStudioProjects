@@ -1,5 +1,10 @@
 package br.com.smartirrigation.smartirrigation.services;
 
+import java.util.List;
+
+import br.com.smartirrigation.smartirrigation.model.CantResponse;
+import br.com.smartirrigation.smartirrigation.model.EquipResponse;
+import br.com.smartirrigation.smartirrigation.model.EquipsUser;
 import br.com.smartirrigation.smartirrigation.model.ResponseUser;
 import br.com.smartirrigation.smartirrigation.model.User;
 import br.com.smartirrigation.smartirrigation.model.UserReponse;
@@ -41,6 +46,14 @@ public interface UserPost {
     @POST("api/Usuario/AlterarPerfil")
     public Call<ResponseUser> atualizarperfil(@Field("Id") String Id, @Field("Nome") String Nome, @Field("Email") String Email);
 
+    @POST("api/Equipamento/ObterPeloUsuario")
+    public Call<List<EquipResponse>> equipamentos_user(@Query("IdUsuario") String IdUsuario);
 
+    @POST("api/Equipamento/AssociarUsuarioEquipamento")
+    public Call<ResponseUser> equipamentos_user_add(@Query("IdUsuario") String IdUsuario, @Query("IdEquipamento") String IdEquipamento);
+
+    @FormUrlEncoded
+    @POST("api/Canteiro/AdicionarCanteiro")
+    public Call<ResponseUser> addcanteiro(@Field("IdCanteiro") String IdCanteiro, @Field("IdEquipamento") String IdEquipamento, @Field("Nome") String Nome);
 
 }

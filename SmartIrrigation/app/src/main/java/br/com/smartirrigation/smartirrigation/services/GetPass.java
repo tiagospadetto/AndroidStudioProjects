@@ -1,4 +1,7 @@
 package br.com.smartirrigation.smartirrigation.services;
+import java.util.List;
+
+import br.com.smartirrigation.smartirrigation.model.CantResponse;
 import br.com.smartirrigation.smartirrigation.model.ResponseUser;
 import br.com.smartirrigation.smartirrigation.model.UserReponse;
 import retrofit2.Call;
@@ -17,4 +20,6 @@ public interface GetPass {
     @GET("api/Usuario/ObterUsuario")
     public Call<UserReponse> getuser(@Query("IdUsuario") String IdUsuario);
 
+    @GET("api/Canteiro/ObterPeloEquipamento")
+    public Call<List<CantResponse>> canteiros_user(@Query("IdEquipamento") String IdEquipamento);
 }

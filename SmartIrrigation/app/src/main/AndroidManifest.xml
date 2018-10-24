@@ -72,7 +72,10 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".activity.EquipamentoActivity"></activity>
+        <activity android:name=".activity.EquipamentoActivity" />
+        <activity android:name=".activity.AddEquipActivity" />
+        <activity android:name=".activity.CanteiroActivity" />
+        <activity android:name=".activity.AddCantActivity"></activity>
     </application>
 
 </manifest>

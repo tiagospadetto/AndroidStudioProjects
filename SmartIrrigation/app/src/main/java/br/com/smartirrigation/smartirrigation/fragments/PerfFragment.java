@@ -12,16 +12,24 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import br.com.smartirrigation.smartirrigation.R;
+import br.com.smartirrigation.smartirrigation.activity.CanteiroActivity;
 import br.com.smartirrigation.smartirrigation.activity.EditEmailActivity;
 import br.com.smartirrigation.smartirrigation.activity.EditNameActivity;
 import br.com.smartirrigation.smartirrigation.activity.EquipamentoActivity;
 import br.com.smartirrigation.smartirrigation.activity.HomeActivity;
 import br.com.smartirrigation.smartirrigation.interfaces.TratReturn;
+import br.com.smartirrigation.smartirrigation.model.CantResponse;
+import br.com.smartirrigation.smartirrigation.model.EquipResponse;
+import br.com.smartirrigation.smartirrigation.model.EquipsUser;
 import br.com.smartirrigation.smartirrigation.model.ResponseUser;
 import br.com.smartirrigation.smartirrigation.model.SaveSharedPreference;
 import br.com.smartirrigation.smartirrigation.model.User;
 import br.com.smartirrigation.smartirrigation.model.UserReponse;
+import br.com.smartirrigation.smartirrigation.task.CantUserTask;
+import br.com.smartirrigation.smartirrigation.task.EquipUserTask;
 import br.com.smartirrigation.smartirrigation.task.GetUserTask;
 
 import static br.com.smartirrigation.smartirrigation.R.color.colorPrimary;
@@ -29,14 +37,16 @@ import static br.com.smartirrigation.smartirrigation.R.color.colorPrimary;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBack,TratReturn {
+public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBack,TratReturn, EquipUserTask.EquipUserCallBack, CantUserTask.CantUserCallBack {
 
     private TextView nome_user ;
     private TextView email_user ;
-    private TextView equipamento_quant;
+    private TextView Text_View_Equipamentos;
     private TextView edit_user;
     private TextView edit_email;
+    private TextView Text_View_Canteiros;
     private CardView equipamento_card_view;
+    private CardView Card_View_Canteiros;
 
 
     private UserReponse user ;
@@ -55,30 +65,31 @@ public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBac
         email_user = view.findViewById(R.id.email_user);
         edit_user = view.findViewById(R.id.edit_user);
         edit_email = view.findViewById(R.id.edit_email);
-       // equipamento_quant = view.findViewById(R.id.equipamento_quant);
-        //equipamento_card_view = view.findViewById(R.id.equipamento_card_view);
+        Text_View_Equipamentos = view.findViewById(R.id.Text_View_Equipamentos);
+        equipamento_card_view = view.findViewById(R.id.Card_view_Equipamentos);
+        Card_View_Canteiros = view.findViewById(R.id.Card_View_Canteiros);
+        Text_View_Canteiros = view.findViewById(R.id.Text_View_Canteiros);
 
         atualizaFragmentComResposta();
 
-        /*
+        Card_View_Canteiros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent3 = new Intent(getActivity(), CanteiroActivity.class);
+                startActivity(intent3);
+            }
+        });
+
         equipamento_card_view.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-              // equipamento_card_view.setCardElevation(1);
-               // equipamento_card_view.setCardBackgroundColor(colorPrimary);
 
-
-                Intent intent2 = new Intent(getActivity(),
-                        EquipamentoActivity.class);
-
+                Intent intent2 = new Intent(getActivity(), EquipamentoActivity.class);
                 startActivity(intent2);
-
-
             }
 
         });
-*/
 
         edit_user.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,5 +146,36 @@ public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBac
         GetUserTask task = new GetUserTask(PerfFragment.this);
 
         task.execute(SaveSharedPreference.getUserName(getActivity())) ;
+
+        EquipUserTask task2 = new EquipUserTask(PerfFragment.this, getContext());
+        task2.execute(SaveSharedPreference.getUserName(getActivity())) ;
+
+
+
+    }
+
+    @Override
+    public void EquipUserSuccess(List<EquipResponse> equips) {
+
+        Text_View_Equipamentos.setText( Integer.toString(equips.size()));
+        SaveSharedPreference.setIdEquip(getActivity(),equips.get(0).getIdEquipamento().toString());
+
+        CantUserTask task = new CantUserTask(PerfFragment.this);
+        task.execute(equips.get(0).getIdEquipamento().toString());
+    }
+
+    @Override
+    public void EquipUserFailure(String message) {
+        Text_View_Equipamentos.setText("0");
+    }
+
+    @Override
+    public void CantUserSuccess(List<CantResponse> cants) {
+
+        Text_View_Canteiros.setText(Integer.toString(cants.size()));
+    }
+    @Override
+    public void CantUserFailure(String message) {
+
     }
 }
