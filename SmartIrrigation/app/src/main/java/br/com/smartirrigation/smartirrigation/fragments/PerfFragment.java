@@ -158,10 +158,14 @@ public class PerfFragment extends Fragment implements GetUserTask.GetUserCallBac
     public void EquipUserSuccess(List<EquipResponse> equips) {
 
         Text_View_Equipamentos.setText( Integer.toString(equips.size()));
-        SaveSharedPreference.setIdEquip(getActivity(),equips.get(0).getIdEquipamento().toString());
+        if(equips.size() > 0)
+        {
+            SaveSharedPreference.setIdEquip(getActivity(),equips.get(0).getIdEquipamento().toString());
 
-        CantUserTask task = new CantUserTask(PerfFragment.this);
-        task.execute(equips.get(0).getIdEquipamento().toString());
+            CantUserTask task = new CantUserTask(PerfFragment.this);
+            task.execute(equips.get(0).getIdEquipamento().toString());
+        }
+
     }
 
     @Override
